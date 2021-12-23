@@ -1,4 +1,4 @@
-export abstract class AbstractCachedRepository<ID, POJO extends object, DECRYPTED_POJO extends object, MUTATE_ARGUMENT extends POJO | DECRYPTED_POJO> {
+export abstract class AbstractCachedRepository<ID, POJO extends object, DECRYPTED_POJO extends object, MUTATE_ARGUMENT extends POJO | DECRYPTED_POJO = DECRYPTED_POJO> {
     constructor(private readonly cacheService: AbstractCachedRepository.CacheService<ID, POJO>) { }
 
     protected abstract decrypt(value: POJO): DECRYPTED_POJO;
